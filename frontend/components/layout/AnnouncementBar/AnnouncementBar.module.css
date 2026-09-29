@@ -1,0 +1,39 @@
+/* AnnouncementBar Styles */
+.announcementBar {
+  background-color: var(--color-gold);
+  /* padding: 20px 0; */
+  overflow: hidden;
+  display: flex;
+  height: 40px;
+}
+
+.track {
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.item {
+  flex-shrink: 0;
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-wide);
+  /* padding-inline: 1rem; */
+}
+
+.item::after {
+  content: "•";
+  margin-left: 3rem;
+  color: var(--color-charcoal)
+}
+
+@keyframes marquee {
+  0% {
+    transform: translatex(0);
+  }
+
+  100% {
+    transform: translatex(-50%);
+  }
+}

@@ -1,0 +1,191 @@
+/* =========================================================
+   Navbar
+   ========================================================= */
+
+.navBar {
+  background-color: var(--color-white);
+  border-bottom: 1px solid rgba(184, 155, 106, 0.65);
+  z-index: var(--z-header);
+}
+
+/* ---------------------------------------------------------
+   Inner Row
+   --------------------------------------------------------- */
+
+.navInner {
+  padding-block: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+   Logo
+   --------------------------------------------------------- */
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* ---------------------------------------------------------
+   Desktop Nav Links
+   --------------------------------------------------------- */
+
+.navLink {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-charcoal);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink:hover {
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------
+   Desktop Icons
+   --------------------------------------------------------- */
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  color: var(--color-charcoal);
+  transition: color 0.3s ease-in-out;
+}
+
+.iconLink:hover {
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------
+   Hamburger Button
+   --------------------------------------------------------- */
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-charcoal);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.menuToggle:hover {
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------
+   Mobile Menu
+   --------------------------------------------------------- */
+
+.mobileMenu {
+  position: absolute;
+  top: 100%; /* sticks right below the navbar */
+  left: 0;
+  width: 100%;
+
+  background-color: var(--color-white);
+  border-top: 1px solid rgba(28, 26, 24, 0.08);
+  box-shadow: 0 12px 25px rgba(28, 26, 24, 0.06);
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  padding-inline: 1.5rem;
+
+  transition:
+    max-height 400ms ease-in-out,
+    opacity 250ms ease-in-out,
+    visibility 250ms ease-in-out,
+    padding 300ms ease;
+}
+
+.mobileMenuOpen {
+  max-height: 500px;
+  padding: 1rem 1.5rem 1.75rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------------------------------------------------------
+   Mobile Nav Links
+   --------------------------------------------------------- */
+
+.mobileNavItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavItems li {
+  border-bottom: 1px solid rgba(28, 26, 24, 0.08);
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 0.875rem 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-charcoal);
+  transition: color 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--color-gold);
+}
+
+/* ---------------------------------------------------------
+   Mobile Icons
+   --------------------------------------------------------- */
+
+.mobileIcons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-6) 0 0;
+}
+
+.mobileIconLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-charcoal);
+  transition: color 0.3s ease;
+}
+
+.mobileIconLink:hover {
+  color: var(--color-gold);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Hide desktop nav and icons */
+  .navItems,
+  .desktopIcons {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menuToggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 120px;
+  }
+}
