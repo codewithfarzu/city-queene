@@ -53,7 +53,7 @@ const Navbar = () => {
       <div id="mobile-navigation" className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`} aria-hidden={!isMenuOpen}>
         {/* Mobile Nav Links */}
         <ul className={styles.mobileNavItems}>
-          <li><Link href="/" onClick={closeMenu} className={styles.mobileNavLink}>HOME</Link></li>
+          {/* <li><Link href="/" onClick={closeMenu} className={styles.mobileNavLink}>HOME</Link></li> */}
           <li><Link href="/shop" onClick={closeMenu} className={styles.mobileNavLink}>SHOP</Link></li>
           <li><Link href="/occasion-wear" onClick={closeMenu} className={styles.mobileNavLink}>OCCASIONS WEAR</Link></li>
           <li><Link href="/queene-choice" onClick={closeMenu} className={styles.mobileNavLink}>QUEENÉ CHOICE</Link></li>
@@ -62,9 +62,9 @@ const Navbar = () => {
 
         {/* Mobile Icons */}
         <ul className={styles.mobileIcons}>
-          <li><Link href="/login" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Login"><User size={18} strokeWidth={1.5} /> Login</Link></li>
-          <li><Link href="/wishlist" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Wishlist"><Heart size={18} strokeWidth={1.5} /> Wishlist</Link></li>
-          <li><Link href="/cart" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Cart"><ShoppingBag size={18} strokeWidth={1.5} /> Cart</Link></li>
+          <li><Link href="/login" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Login"><User size={18} strokeWidth={1} /> Login</Link></li>
+          <li><Link href="/wishlist" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Wishlist"><Heart size={18} strokeWidth={1} /> Wishlist</Link></li>
+          <li><Link href="/cart" onClick={closeMenu} className={styles.mobileIconLink} aria-label="Cart"><ShoppingBag size={18} strokeWidth={1} /> Cart</Link></li>
         </ul>
       </div>
 
