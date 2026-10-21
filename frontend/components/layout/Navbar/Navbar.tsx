@@ -4,16 +4,29 @@ import styles from './Navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { User, Heart, ShoppingBag, AlignRight, X, } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
-    <nav className={`${styles.navBar} relative`}>
+    <nav className={`${styles.navBar} ${scrolled ? styles.navBarSticky : ''} relative`}>
 
       {/* Main navbar row */}
       <div className="container-wide">
@@ -22,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className={styles.logo}>
             <Link href="/">
-              <Image src="/brand-logo/final-logo.brand.png" alt="Brand Logo" width={150} height={150} loading="eager" />
+              <Image src="/brand-logo/final-logo.brand.png" alt="Brand Logo" width={150} height={50} loading="eager" style={{height:'auto'}} />
             </Link>
           </div>
 

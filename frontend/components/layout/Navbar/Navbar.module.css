@@ -6,6 +6,16 @@
   background-color: var(--color-white);
   border-bottom: 1px solid rgba(184, 155, 106, 0.65);
   z-index: var(--z-header);
+  width: 100%;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navBarSticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(28, 26, 24, 0.08);
 }
 
 /* ---------------------------------------------------------
@@ -84,7 +94,8 @@
 
 .mobileMenu {
   position: absolute;
-  top: 100%; /* sticks right below the navbar */
+  top: 100%;
+  /* sticks right below the navbar */
   left: 0;
   width: 100%;
 
