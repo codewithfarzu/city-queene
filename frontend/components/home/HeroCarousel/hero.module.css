@@ -22,7 +22,7 @@
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
@@ -35,9 +35,9 @@
   top: 50%;
   left: 8%;
   transform: translateY(-50%);
-  max-width: 600px;
+  max-width: 700px;
   color: white;
-  transition:opacity 0.8s ease, transform 3s ease;
+  transition: opacity 0.8s ease, transform 3s ease;
 }
 
 .eyebrow {
@@ -78,6 +78,32 @@
 }
 
 .button:hover {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border-color: var(--color-gold);
+}
+
+.dots {
+  position: absolute;
+  bottom: -40px;
+  left: 12%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 3;
+}
+
+.dot {
+  width: 20px;
+  height: 2px;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.activeDot {
+  width: 40px;
   background: var(--color-white);
-  color: var(--color-charcoal);
 }

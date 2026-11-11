@@ -1,0 +1,158 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--color-ivory);
+}
+
+.headingBlock {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--color-gold);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: var(--font-heding);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 40fr, 60fr;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 680px;
+}
+
+.smallColumn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.bigTile,
+.smallTile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(20deg, #000000c9, transparent);
+  transition: background 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.tileText {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tileName {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  transition: transform 0.4s ease;
+}
+
+.tileLink {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.bigTile:hover .image,
+.smallTile:hover .image {
+  transform: scale(1.06);
+}
+
+.bigTile:hover .overlay,
+.smallTile:hover .overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+}
+
+.bigTile:hover .tileName,
+.smallTile:hover .tileName {
+  transform: translateY(-4px);
+}
+
+.bigTile:hover .tileLink,
+.smallTile:hover .tileLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+
+
+@media (max-width: 1024px) {
+  .grid {
+    height: 560px;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .bigTile {
+    height: 400px;
+  }
+
+  .smallColumn {
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .smallColumn {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .smallTile {
+    height: 200px;
+  }
+}

@@ -249,6 +249,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+header {
+  height: calc(var(--header-height) + 40px); /* navbar 80px + announcementbar 40px */
+}
+
 
 body, button, input, textarea, select {font-family: inherit;}
 

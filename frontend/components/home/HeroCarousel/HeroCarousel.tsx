@@ -73,7 +73,14 @@ const HeroCarousel = () => {
         <a href="#" className={`${styles.button}`}>
           {slides[currentSlide].button}
         </a>
+
+        <div className={`${styles.dots}`}>
+          {slides.map((slide, index) => (
+            <button key={slide.id} className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ""}`} onClick={() => setCurrentSlide(index)} aria-label={`Go to slide ${index + 1}`} />
+          ))}
+        </div>
       </div>
+
     </section>
   );
 }
